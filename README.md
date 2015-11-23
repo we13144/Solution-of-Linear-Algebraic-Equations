@@ -1,5 +1,5 @@
-# -rational-numbers-calculator
-A calculator of rational numbers.
+# Solution-of-Linear-Algebraic-Equations
+A calculator of Linear Algebraic Equations.
 Copyright [2015] [LZUIADA]
 
 Licensed under the Apache License, Version 2.0 (the "License");
