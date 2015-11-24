@@ -52,7 +52,7 @@ public:
 	~Matrix(){ }  // Destructor
 
 	// Nember function
-	void resize(size_t &, size_t &);  // Reset matrix size. 
+	void resize(const size_t &, const size_t &);  // Reset matrix size. 
 	void add_row(size_t &, vF &);  // Add a line.
 	void add_to_other_row(size_t &, Fraction &);  // One row of the matrix is multiplied by K,it means matrix is multiplied by K.
 	void add_to_other_row(size_t &, size_t &, Fraction &);  // One row of the matrix is multiplied by K and added to the other line.
