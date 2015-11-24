@@ -16,17 +16,120 @@ typedef vector<Fraction> vF;
 typedef vector<vector<Fraction>> v_vF;
 
 // Operator overloading.
-Matrix operator+ (const Matrix &temp_m1, const Matrix &temp_m2);
+Matrix operator+ (const Matrix &temp_m1, const Matrix &temp_m2);//先判断m1和m2矩阵是不是为同类型矩阵
+{
+    Matrix temp_m3;
+    if (temp_m1.row==temp_m2.row&&temp_m1.col==temp_m2.col)
+    {
+        for(size_t i=0;i<temp_m1.row;++i)
+        {
+            for(size_t j=0;j<temp_m1.col;++j)
+            {
+                temp_m3.matrix[i][j]=temp_m1.[i][j]+temp_m2.matrix[i][j];
+            }
+        }
+    }
+    else{}
+
+    return temp_m3.matrix;
+}
 
 Matrix operator+= (Matrix &temp_m1, const Matrix &temp_m2);
+{
+    if (temp_m1.row==temp_m2.row&&temp_m1.col==temp_m2.col)
+    {
+        for(size_t i=0;i<temp_m1.row;++i)
+        {
+            for(size_t j=0;j<temp_m1.col;++j)
+            {
+                temp_m1.matrix[i][j]+=temp_m2.matrix[i][j];
+            }
+        }
+    }
+    else{}
+
+    return temp_m1.matrix;
+}
+
 
 Matrix operator- (const Matrix &temp_m1, const Matrix &temp_m2);
+{
+    Matrix temp_m3;
+    if (temp_m1.row==temp_m2.row&&temp_m1.col==temp_m2.col)
+    {
+        for(size_t i=0;i<temp_m1.row;++i)
+        {
+            for(size_t j=0;j<temp_m1.col;++j)
+            {
+                temp_m3.matrix[i][j]=temp_m1.[i][j]-temp_m2.matrix[i][j];
+            }
+        }
+    }
+    else{}
+
+    return temp_m3.matrix;
+}
+
 
 Matrix operator-= (Matrix &temp_m1, const Matrix &temp_m2);
+{
+    if (temp_m1.row==temp_m2.row&&temp_m1.col==temp_m2.col)
+    {
+        for(size_t i=0;i<temp_m1.row;++i)
+        {
+            for(size_t j=0;j<temp_m1.col;++j)
+            {
+                temp_m1.matrix[i][j]-=temp_m2.matrix[i][j];
+            }
+        }
+    }
+    else{}
 
-Matrix operator* (const Matrix &temp_m1, const Matrix &temp_m2);
+    return temp_m1.matrix;
+}
+
+
+Matrix operator* (const Matrix &temp_m1, const Matrix &temp_m2);//第一个矩阵A的列数和另一个矩阵B的行数相等时，
+{
+    Matrix temp_m3;
+    if (temp_m1.col==temp_m2.row)
+    {
+        for(size_t i=0;i<temp_m1.row;++i)
+        {
+            for(size_t j=0;j<temp_m2.col;++j)
+            {
+                temp_m3.matrix[i][j]=0;
+                for (m=0;m<temp_m1.col;++m)
+                     temp_m3.matrix[i][j]=temp_m1.[i][m]*temp_m2.matrix[m][j]+temp_m3.matrix[i][j];
+            }
+        }
+    }
+    else{}
+
+    return temp_m3.matrix;
+}
+
 
 Matrix operator*= (Matrix &temp_m1, const Matrix &temp_m2);
+{
+    Matrix temp_m3;
+    if (temp_m1.col==temp_m2.row)
+    {
+        for(size_t i=0;i<temp_m1.row;++i)
+        {
+            for(size_t j=0;j<temp_m2.col;++j)
+            {
+                temp_m3.matrix[i][j]=0;
+                for (m=0;m<temp_m1.col;++m)
+                     temp_m3.matrix[i][j]=temp_m1.[i][m]*temp_m2.matrix[m][j]+temp_m3.matrix[i][j];
+            }
+        }
+    }
+    else{}
+
+    temp_m1.matrix=temp_m3.matrix;
+    return temp_m1.matrix;
+}
 
 bool operator== (const Matrix &temp_m1, const Matrix &temp_m2) {
 	if (temp_m1.row != temp_m2.row || temp_m1.col != temp_m2.col) {
