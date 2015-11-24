@@ -184,7 +184,7 @@ std::istream& operator>> (std::istream &in, Matrix &temp_m) {
 }
 
 inline
-void Matrix::resize(size_t &temp_row, size_t &temp_col){  // Reset matrix size.
+void Matrix::resize(const size_t &temp_row, const size_t &temp_col){  // Reset matrix size.
 	row = temp_row;
 	col = temp_col;
 	matrix.resize(row);
