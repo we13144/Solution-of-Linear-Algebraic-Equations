@@ -30,7 +30,7 @@ Matrix operator+ (const Matrix &temp_m1, const Matrix &temp_m2);
         }
     }
     else{
-    	throw runtime_error("Rows and columns are not equal.")
+    	throw runtime_error("Rows and columns are not equal.");
     }
 
     return temp_m3;
