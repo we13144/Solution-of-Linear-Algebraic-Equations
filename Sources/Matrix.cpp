@@ -369,7 +369,7 @@ void Matrix::del_col(size_t &temp_col) {  // Minus one column.
 	--col;
 }
 
-nline
+inline
 Matrix Matrix::trans() {  // Transpose a matrix.
 	Matrix temp_M;
 	if (matrix.empty()) {
