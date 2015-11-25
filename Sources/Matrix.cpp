@@ -29,7 +29,8 @@ Matrix operator+ (const Matrix &temp_m1, const Matrix &temp_m2);
             }
         }
     }
-    else{
+    else
+    {
     	throw runtime_error("Rows and columns are not equal.");
     }
 
