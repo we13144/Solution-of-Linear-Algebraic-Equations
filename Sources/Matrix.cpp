@@ -369,11 +369,11 @@ void Matrix::del_col(size_t &temp_col) {  // Minus one column.
 	--col;
 }
 
-inline
+nline
 Matrix Matrix::trans() {  // Transpose a matrix.
 	Matrix temp_M;
 	if (matrix.empty()) {
-		return temp_M;
+		throw runtime_error("The matrix is empty.");
 	}
 	else {
 		temp_M.row = row;
