@@ -23,7 +23,7 @@ Matrix operator+ (const Matrix &temp_m1, const Matrix &temp_m2);
     {
         for(size_t i = 0; i < temp_m1.row; ++i)
         {
-            for(size_t j =0; j < temp_m1.col; ++j)
+            for(size_t j = 0; j < temp_m1.col; ++j)
             {
                 temp_m3.matrix[i][j] = temp_m1.[i][j] + temp_m2.matrix[i][j];
             }
