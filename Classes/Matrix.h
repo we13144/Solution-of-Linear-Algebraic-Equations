@@ -25,6 +25,7 @@ public:
 	friend bool operator!= (const Matrix&, const Matrix&);
 	friend std::ostream& operator<< (std::ostream&, const Matrix&);
 	friend std::istream& operator>> (std::istream&, Matrix&);
+	
 public:
 	// Constructor.
 	Matrix() = default;
