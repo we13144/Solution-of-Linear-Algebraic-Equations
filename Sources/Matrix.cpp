@@ -16,7 +16,7 @@ typedef vector<Fraction> vF;
 typedef vector<vector<Fraction>> v_vF;
 
 // Operator overloading.
-Matrix operator+ (const Matrix &temp_m1, const Matrix &temp_m2);
+Matrix operator+ (const Matrix &temp_m1, const Matrix &temp_m2)
 {
     Matrix temp_m3;
     if (temp_m1.row == temp_m2.row && temp_m1.col == temp_m2.col)  // 先判断m1和m2矩阵是不是为同类型矩阵。
@@ -38,7 +38,7 @@ Matrix operator+ (const Matrix &temp_m1, const Matrix &temp_m2);
     return temp_m3;
 }
 
-Matrix operator+= (Matrix &temp_m1, const Matrix &temp_m2);
+Matrix operator+= (Matrix &temp_m1, const Matrix &temp_m2)
 {
     if (temp_m1.row == temp_m2.row && temp_m1.col == temp_m2.col)
     {
@@ -58,7 +58,7 @@ Matrix operator+= (Matrix &temp_m1, const Matrix &temp_m2);
     return temp_m1;
 }
 
-Matrix operator- (const Matrix &temp_m1, const Matrix &temp_m2);
+Matrix operator- (const Matrix &temp_m1, const Matrix &temp_m2)
 {
     Matrix temp_m3;
     if (temp_m1.row == temp_m2.row && temp_m1.col == temp_m2.col)
@@ -80,7 +80,7 @@ Matrix operator- (const Matrix &temp_m1, const Matrix &temp_m2);
     return temp_m3;
 }
 
-Matrix operator-= (Matrix &temp_m1, const Matrix &temp_m2);
+Matrix operator-= (Matrix &temp_m1, const Matrix &temp_m2)
 {
     if (temp_m1.row == temp_m2.row && temp_m1.col == temp_m2.col)
     {
@@ -99,7 +99,7 @@ Matrix operator-= (Matrix &temp_m1, const Matrix &temp_m2);
 
     return temp_m1;
 
-Matrix operator* (const Matrix &temp_m1, const Matrix &temp_m2);
+Matrix operator* (const Matrix &temp_m1, const Matrix &temp_m2)
 {
     Matrix temp_m3;
     if (temp_m1.col == temp_m2.row)  // 第一个矩阵A的列数和另一个矩阵B的行数相等时。
@@ -123,7 +123,7 @@ Matrix operator* (const Matrix &temp_m1, const Matrix &temp_m2);
     return temp_m3;
 }
 
-Matrix operator*= (Matrix &temp_m1, const Matrix &temp_m2);
+Matrix operator*= (Matrix &temp_m1, const Matrix &temp_m2)
 {
     Matrix temp_m3;
     if (temp_m1.col == temp_m2.row)
