@@ -67,6 +67,7 @@ public:
 	Matrix trans();  // Transpose a matrix.
 	string cout_out() const;  // Output matrix.
 	void cin_in(string &);  // Input matrix.
+	void Matrix::resolve(Matrix &temp_m1);   // devide into triangular matrix.
 	
 private:
 	size_t row = 0;  // rows
