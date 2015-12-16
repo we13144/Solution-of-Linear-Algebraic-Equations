@@ -427,3 +427,31 @@ void Matrix::cin_in(string &temp_str) {  // Input matrix.
 		}
 	}
 }
+
+inline
+void Matrix::resolve(Matrix &temp_m1)   // devide into triangular matrix.
+{
+	Matrix up{ temp_m1.row, temp_m1.col};
+	Matrix middle{ temp_m1.row, temp_m1.col};
+	Matrix down{ temp_m1.row, temp_m1.col};
+	Matrix num{ temp_m1.row, temp_m1.col};
+    for(int i = 0; i < temp_m1.row; i++)
+    {
+        for(int j = 0; j < temp_m1.col;  j++)
+        {
+            if(i == j)
+            {
+                Matrix middle[i][j]=temp_m1.matrix[i][j];
+            }
+            else
+            {
+                if(i < j)
+                    Matrix up[i][j]=temp_m1.matrix[i][j];
+                else
+                    Matrix down[i][j]=temp_m1.matrix[i][j];
+            }
+        }
+    }
+    Matrix num = up + down + middle;
+    return num;
+}
